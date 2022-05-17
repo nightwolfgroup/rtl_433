@@ -125,6 +125,7 @@ mappings = {
             "state_class": "measurement"
         }
     },
+  
     "temperature_1_C": {
         "device_type": "sensor",
         "object_suffix": "T1",
@@ -136,6 +137,7 @@ mappings = {
             "state_class": "measurement"
         }
     },
+  
     "temperature_2_C": {
         "device_type": "sensor",
         "object_suffix": "T2",
@@ -147,6 +149,7 @@ mappings = {
             "state_class": "measurement"
         }
     },
+  
     "temperature_F": {
         "device_type": "sensor",
         "object_suffix": "F",
@@ -168,6 +171,16 @@ mappings = {
             "unit_of_measurement": "%",
             "value_template": "{{ float(value) * 99 + 1 }}",
             "state_class": "measurement",
+            "entity_category": "diagnostic"
+        }
+    },
+  
+    "esn": {
+        "device_type": "sensor",
+        "object_suffix": "esn",
+        "config": {
+            "name": "ESN",
+            "value_template": "{{ value }}",
             "entity_category": "diagnostic"
         }
     },
@@ -467,6 +480,7 @@ mappings = {
             "state_class": "measurement"
         }
     },
+  
     "lux": {
         "device_type": "sensor",
         "object_suffix": "lux",
@@ -488,6 +502,7 @@ mappings = {
             "state_class": "measurement"
         }
     },
+  
     "uvi": {
         "device_type": "sensor",
         "object_suffix": "uvi",
@@ -538,6 +553,26 @@ mappings = {
             "name": "SCM Consumption Value",
             "value_template": "{{ value|int }}",
             "state_class": "total_increasing",
+        }
+    },
+  
+    "closed": {
+        "device_type": "binary_sensor",
+        "object_suffix": "closed",
+        "config": {
+            "device_class": "door",
+            "force_update": "true",
+            "payload_on": "0",
+            "payload_off": "1",
+        }
+    },
+  
+    "event": {
+        "device_type": "binary_sensor",
+        "object_suffix": "event",
+        "config": {
+            "payload_on": "1",
+            "payload_off": "0",
         }
     },
 
